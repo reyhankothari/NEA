@@ -14,16 +14,12 @@ class LoginInterface(QDialog):
         super(LoginInterface, self).__init__()
         loadUi("LoginInterface\LoginInterfaceUI.ui", self)
         self.show()
-        self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
-        #self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
-        self.background_image_widget.resize(459, 414)
-        self.label.setText("Login Interface")
+        
+       
 
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    Form = QtWidgets.QWidget()
     mainWindow = LoginInterface()
-    mainWindow.show()
     app.exec_()
 
