@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>502</width>
-    <height>644</height>
+    <height>708</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -40,7 +40,7 @@
       <x>20</x>
       <y>20</y>
       <width>401</width>
-      <height>571</height>
+      <height>591</height>
      </rect>
     </property>
     <property name="minimumSize">
@@ -52,7 +52,7 @@
     <property name="maximumSize">
      <size>
       <width>401</width>
-      <height>571</height>
+      <height>600</height>
      </size>
     </property>
     <property name="styleSheet">
@@ -67,8 +67,8 @@ border-radius: 20px;</string>
     <property name="geometry">
      <rect>
       <x>136</x>
-      <y>70</y>
-      <width>161</width>
+      <y>78</y>
+      <width>167</width>
       <height>171</height>
      </rect>
     </property>
@@ -80,14 +80,14 @@ border-radius: 20px;</string>
     </property>
     <property name="maximumSize">
      <size>
-      <width>161</width>
-      <height>171</height>
+      <width>200</width>
+      <height>200</height>
      </size>
     </property>
     <property name="font">
      <font>
       <family>dripicons-v2</family>
-      <pointsize>85</pointsize>
+      <pointsize>100</pointsize>
      </font>
     </property>
     <property name="styleSheet">
@@ -106,7 +106,7 @@ border-radius: 20px;</string>
       <x>30</x>
       <y>50</y>
       <width>381</width>
-      <height>521</height>
+      <height>551</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -121,16 +121,16 @@ border-radius:20px;
    <widget class="QLineEdit" name="username_input">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>280</y>
-      <width>311</width>
+      <x>50</x>
+      <y>290</y>
+      <width>341</width>
       <height>41</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Malgun Gothic Semilight</family>
-      <pointsize>13</pointsize>
+      <pointsize>12</pointsize>
      </font>
     </property>
     <property name="styleSheet">
@@ -146,16 +146,16 @@ color: white;</string>
    <widget class="QLineEdit" name="password_input">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>360</y>
-      <width>311</width>
+      <x>50</x>
+      <y>380</y>
+      <width>341</width>
       <height>41</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Malgun Gothic Semilight</family>
-      <pointsize>13</pointsize>
+      <pointsize>12</pointsize>
      </font>
     </property>
     <property name="styleSheet">
@@ -172,7 +172,7 @@ color: white;</string>
     <property name="geometry">
      <rect>
       <x>150</x>
-      <y>430</y>
+      <y>460</y>
       <width>151</width>
       <height>51</height>
      </rect>
@@ -196,7 +196,7 @@ background-color: rgba(0,0,0,100);</string>
     <property name="geometry">
      <rect>
       <x>150</x>
-      <y>500</y>
+      <y>530</y>
       <width>151</width>
       <height>51</height>
      </rect>
@@ -226,30 +226,13 @@ background-color: rgba(0,0,0,100);</string>
   </widget>
  </widget>
  <tabstops>
-  <tabstop>forgot_password_button</tabstop>
-  <tabstop>login_button</tabstop>
-  <tabstop>password_input</tabstop>
   <tabstop>username_input</tabstop>
+  <tabstop>password_input</tabstop>
+  <tabstop>login_button</tabstop>
+  <tabstop>forgot_password_button</tabstop>
  </tabstops>
  <resources>
   <include location="resource.qrc"/>
  </resources>
- <connections>
-  <connection>
-   <sender>username_input</sender>
-   <signal>returnPressed()</signal>
-   <receiver>login_button</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>116</x>
-     <y>319</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>248</x>
-     <y>512</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>
