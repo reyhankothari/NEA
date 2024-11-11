@@ -41,13 +41,11 @@ class LoginInterface(QWidget):  # Define the LoginInterface class inheriting fro
         self.show()
 
     def login(self):
-        valid = self.verify()
+        valid = self.verify() # Check if the credentials are valid
         if valid:
-            self.close()
-            self.test = testInterface()
-            self.test.show()
-        else:
-            return
+            self.close() # Close the login interface
+            self.test = testInterface()  # Create an instance of the temporary class
+            self.test.show()  # Show the instance of the temporary class
             
         
 
@@ -55,29 +53,29 @@ class LoginInterface(QWidget):  # Define the LoginInterface class inheriting fro
     def verify(self):
         #Check if the username and password are present
         username_present = bool(self.username_input.text()) 
-        password_present = bool(self.password_input.text()) 
+        password_present = bool(self.password_input.text())  
         if username_present and password_present:
             #Print the username and password if both are present
-            username = self.username_input.text()
-            password = (self.password_input.text()).encode()
-            self.cursor.execute("SELECT password_hash FROM staff WHERE username = ?", (username,))
-            result = self.cursor.fetchone()
+            username = self.username_input.text()  # Get the username from the username input
+            password = (self.password_input.text()).encode('utf-8')  # Get the password from the password input and encode it
+            self.cursor.execute("SELECT password_hash FROM staff WHERE username = ?", (username))  # Execute an SQL query to get the hashed password from the database
+            result = self.cursor.fetchone()  # Fetch the result of the query
             if result is None:
                 self.error("Invalid credentials")
+                return False  # Show an error message if the username is not found
             else:
-                password_hash = (result[0])
-                check = bcrypt.checkpw(password,password_hash)
+                password_hash = (result[0])  # Get the hashed password from the result
+                check = bcrypt.checkpw(password,password_hash)  # Check if the hashed password matches the one in the database
                 if check:
-                    return True
+                    return True  # Return True if the credentials are valid
                 else:
-                    self.error("Invalid credentials")
-                    return False
-                 
+                    # Show an error message if the credentials are invalid
+                    self.error("Invalid credentials")  
+                    return False  
         else:
             #Show an error message if both are not present
-            self.error("Username/Password empty")
+            self.error("Username/Password empty")  
             return False
-        
 
     #Display an error message box with the specified text
     def error(self, text): 
